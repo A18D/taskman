@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="taskmanApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Задачник</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid" style="max-width: 1024px; margin: auto">
+    <div class="row">
+        <img src="img/header.png">
+    </div>
+
+    <div ng-view></div>
+
+    <div ng-controller="mainController"></div>
+
+    <div class="row">
+        <img src="img/footer.png">
+    </div>
+</div>
+
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
+<script src="js/lib/angular-drag-and-drop-lists.min.js"></script>
+<script src="js/app.js"></script>
+
+<script src="js/models/taskListModel.js"></script>
+<script src="js/models/taskFactory.js"></script>
+<script src="js/models/taskModel.js"></script>
+<script src="js/models/dragAndDroTaskModel.js"></script>
+<script src="js/models/choiceTaskModel.js"></script>
+<script src="js/models/inputTaskModel.js"></script>
+
+<script src="js/services/loadQuestionService.js"></script>
+<script src="js/services/taskListService.js"></script>
+<script src="js/services/timerService.js"></script>
+
+<script src="js/directives/dragAndDropDirective.js"></script>
+<script src="js/directives/choiceDirective.js"></script>
+<script src="js/directives/inputDirective.js"></script>
+<script src="js/directives/taskTimerDirective.js"></script>
+<script src="js/directives/taskListPointsDirective.js"></script>
+<script src="js/directives/taskListCoinsDirective.js"></script>
+
+<script src="js/controllers/mainController.js"></script>
+<script src="js/controllers/taskController.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="row dnd__question">
+            <img src="img/question.png"> {{text}}
+        </div>
+
+        <div class="col-md-12" ng-hide="$parent.confirmAction">
+            <div ng-repeat="answer in answers" class="choice__answer">
+                <div class="choice__answer-img pos_r"
+                     ng-click="choiceAnswer(answer)"
+                     ng-class="{'b_s': answer.conformity}">
+                    <img ng-src="img/{{answer.image}}" class="img-size_s block_center">
+                </div>
+            </div>
+
+            <div class="row ptb_s">
+                <button class="btn btn-success" ng-click="$parent.confirmTask()">Подтвердить</button>
+            </div>
+        </div>
+
+        <div ng-show="$parent.confirmAction && $parent.result" class="row text-center">
+            <img src="img/ok.png">
+        </div>
+        <div ng-show="$parent.confirmAction && !$parent.result" class="row text-center">
+            <img src="img/error.png">
+        </div>
+    </div>
+
+    <div class="col-md-3 pt_s">
+        <task-timer></task-timer>
+        <task-list-points></task-list-points>
+        <task-list-coins></task-list-coins>
+    </div>
+</div>
+
+<script type="text/ng-template" id="hint1.html">
+    <div class="choice__tips-text">{{hint.text}}</div>
+</script>
+
+<script type="text/ng-template" id="hint2.html">
+    <div class="choice__tips-text">{{hint.text}}</div>
+    <div class="choice__answer-img choice__tips-img-level2 pos_r">
+        <img ng-src="img/{{hint.image}}" class="img-size_s block_center">
+    </div>
+</script>
+
+<script type="text/ng-template" id="hint3.html">
+    <div class="text-center">
+        <div ng-repeat="answer in hint.answer" class="choice__answer">
+            <div class="choice__answer-img pos_r" ng-class="{'choice__tips-right-img-level3': answer.right}">
+                <img ng-src="img/{{answer.image}}" class="img-size_s block_center">
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="row ptb_s">
+    <a href="#" onclick="return false" ng-click="clickTips(tipsLevel - 1)">
+        <img src="img/help.png">Подсказка
+    </a>
+
+    <div class="hint" ng-repeat="hint in tips" ng-show="showHint[$index]">
+        <div class="hint__body">
+            <div class="hint__header"
+                 ng-class="{bg_blue: $index == 0, bg_sea_wave: $index == 1, bg_green: $last}">
+                <span ng-if="!$last">Подсказка {{$index + 1}}</span>
+                <span ng-if="$last">Ответ</span>
+            </div>
+
+            <div ng-include="'hint' + ($index + 1) + '.html'"></div>
+
+            <div class="hint__more" ng-if="!$last" ng-click="clickTips($index + 1)">
+                <span ng-if="$index == 0">Ещё одна подсказка</span>
+                <span ng-if="$index == 1">Ответ</span>
+            </div>
+        </div>
+    </div>
+</div>

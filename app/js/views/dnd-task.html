@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="row dnd__question">
+            <img src="img/question.png"> {{text}}
+        </div>
+
+        <div class="col-md-9" ng-hide="$parent.confirmAction">
+            <div class="dnd__answer" ng-repeat="answer in answers">
+                <div class="dnd__answer-img pos_r">
+                    <img ng-src="img/{{answer.image}}" class="img-size_s block_center">
+                </div>
+                <div class="dnd__answer-region" dnd-list="conformity"
+                     dnd-drop="dropCallback($index, item, answer)" ng-click="clickCallback(answer)">
+                        <span class="dnd__answer-region-table" ng-if="answer.conformity">
+                            <span class="dnd__answer-region-table-cell">{{answer.conformity}}</span>
+                        </span>
+                </div>
+            </div>
+
+            <div class="row ptb_s">
+                <button class="btn btn-success" ng-click="$parent.confirmTask()">Подтвердить</button>
+            </div>
+        </div>
+
+        <div class="col-md-3" ng-hide="$parent.confirmAction">
+            <ul class="list-unstyled" dnd-list="choices">
+                <li class="dnd__option" ng-repeat="item in choices"
+                    dnd-draggable="item"
+                    dnd-effect-allowed="move"
+                    dnd-moved="choices.splice($index, 1)">{{item.text}}
+                </li>
+            </ul>
+        </div>
+
+        <div ng-show="$parent.confirmAction && $parent.result" class="row text-center">
+            <img src="img/ok.png">
+        </div>
+        <div ng-show="$parent.confirmAction && !$parent.result" class="row text-center">
+            <img src="img/error.png">
+        </div>
+
+    </div>
+
+    <div class="col-md-3 pt_s">
+        <task-timer></task-timer>
+        <task-list-points></task-list-points>
+        <task-list-coins></task-list-coins>
+    </div>
+</div>
+
+<script type="text/ng-template" id="hint.html">
+    <div ng-repeat="answer in hint.answer" class="dnd__answer">
+        <div class="dnd__answer-img pos_r">
+            <img ng-src="img/{{answer.image}}" class="img-size_s block_center">
+        </div>
+
+        <div class="dnd__tips-region">
+            <span class="dnd__answer-region-table cursor_clear">
+                <span class="dnd__answer-region-table-cell">{{answer.sign}}</span>
+            </span>
+        </div>
+    </div>
+</script>
+
+<div class="row ptb_s">
+    <a href="#" onclick="return false" ng-click="clickTips(tipsLevel - 1)">
+        <img src="img/help.png"> Подсказка
+    </a>
+
+    <div class="hint" ng-repeat="hint in tips" ng-show="showHint[$index]">
+        <div class="hint__body">
+            <div class="hint__header"
+                 ng-class="{bg_blue: $index == 0, bg_green: $last}">
+                <span ng-if="!$last">Подсказка {{$index + 1}}</span>
+                <span ng-if="$last">Ответ</span>
+            </div>
+
+            <div ng-include="'hint.html'"></div>
+            <div class="hint__more" ng-if="!$last" ng-click="clickTips($index + 1)">
+                Ещё одна подсказка
+            </div>
+        </div>
+    </div>
+</div>

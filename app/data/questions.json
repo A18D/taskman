@@ -1,0 +1,153 @@
+{
+  "question": [
+    {
+      "text": "\"Подтащи\" названия животных к картинкам",
+      "type": "dragAndDrop",
+      "answer": [
+        {
+          "image": "turtle.png",
+          "sign": "Черепаха"
+        },
+        {
+          "image": "squirrel.png",
+          "sign": "Белка"
+        },
+        {
+          "image": "koala.png",
+          "sign": "Коала"
+        },
+        {
+          "image": "kangaroo.png",
+          "sign": "Кенгуру"
+        },
+        {
+          "image": "elephant.png",
+          "sign": "Слон"
+        },
+        {
+          "image": "tiger.png",
+          "sign": "Тигр"
+        }
+      ],
+      "tips": [
+        {
+          "answer": [
+            {
+              "image": "turtle.png",
+              "sign": "Черепаха"
+            },
+            {
+              "image": "squirrel.png",
+              "sign": "Белка"
+            }
+          ]
+        },
+        {
+          "answer": [
+            {
+              "image": "turtle.png",
+              "sign": "Черепаха"
+            },
+            {
+              "image": "squirrel.png",
+              "sign": "Белка"
+            },
+            {
+              "image": "koala.png",
+              "sign": "Коала"
+            },
+            {
+              "image": "kangaroo.png",
+              "sign": "Кенгуру"
+            },
+            {
+              "image": "elephant.png",
+              "sign": "Слон"
+            },
+            {
+              "image": "tiger.png",
+              "sign": "Тигр"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Найди дятла на картинке",
+      "type": "choice",
+      "answer": [
+        {
+          "image": "owl.png",
+          "right": false
+        },
+        {
+          "image": "duck.png",
+          "right": false
+        },
+        {
+          "image": "chick.png",
+          "right": false
+        },
+        {
+          "image": "toucan.png",
+          "right": true
+        }
+      ],
+      "tips": [
+        {
+          "text": "Отличительная особенность дятлов - это их длинный прямой клюв и острые изогнутые когти, которые позволяют им держаться на горизонтальной поверхности (коре дерева)."
+        },
+        {
+          "text": "Другая картинка дятла",
+          "image": "toucan.png"
+        },
+        {
+          "answer": [
+            {
+              "image": "owl.png",
+              "right": false
+            },
+            {
+              "image": "duck.png",
+              "right": false
+            },
+            {
+              "image": "chick.png",
+              "right": false
+            },
+            {
+              "image": "toucan.png",
+              "right": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Преобразуй единицы",
+      "type": "input",
+      "answer": [
+        "10",
+        "4"
+      ],
+      "template": "13 см = :? дм + :? см",
+      "tips": [
+        {
+          "text": "10 сантиметров содержат в себе 1 дециметр."
+        },
+        {
+          "answer": [
+            "10",
+            "4"
+          ]
+        },
+        {
+          "answer": [
+            "10",
+            "4"
+          ]
+        }
+      ]
+    }
+  ]
+}

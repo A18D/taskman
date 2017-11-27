@@ -1,0 +1,247 @@
+// Colors
+@dnd-option-bg: #153261;
+@dnd-option-color: #fff;
+@answer-img-bg: #f2f5f8;
+
+@default-blue: #4fa4da;
+@default-green: #249457;
+@default-orange: #faaf18;
+@default-red: #e8425f;
+@default-gray: #d5d5d5;
+@default-sea-wave: #08a2a9;
+
+// Borders
+@default-border: 1px solid #000;
+
+// Sizes
+@answer-img-size: 150px;
+@dnd-answer-img-width: 120px;
+@dnd-answer-region-height: 40px;
+
+@default-border-radius: 3px;
+
+// Drag and drop elements
+.dnd__option {
+  background-color: @dnd-option-bg;
+  color: @dnd-option-color;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.dnd__answer, .choice__answer {
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  width: @answer-img-size;
+}
+.dnd__answer-img, .choice__answer-img  {
+  background-color: @answer-img-bg;
+  height: @answer-img-size;
+  margin-bottom: 10px;
+  width: @answer-img-size;
+}
+.dnd__answer-region {
+  border: @default-border;
+  height: @dnd-answer-region-height;
+  overflow: hidden;
+  text-align: center;
+  width: @answer-img-size;
+}
+.dnd__answer-region-table {
+  cursor: pointer;
+  display: table;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.dnd__answer-region-table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.dnd__question {
+  padding: 10px 25px;
+  font-weight: bold;
+}
+.dnd__tips-region {
+  background-color: @dnd-option-bg;
+  color: @dnd-option-color;
+  height: @dnd-answer-region-height;
+  text-align: center;
+  width: @answer-img-size;
+}
+
+// angular-drag-and-drop-lists
+.dndDraggingSource {
+  display: none;
+}
+.dndPlaceholder {
+  background-color: #ddd;
+  display: block;
+  min-height: @dnd-answer-region-height - 2;
+}
+
+// Choice elements
+.choice__answer-img {
+  cursor: pointer;
+}
+.choice__tips-text, .input__tips-text {
+  padding-bottom: 10px;
+}
+.choice__tips-img-level2 {
+  background: #fff;
+  border-radius: @default-border-radius;
+  border: 1px solid @default-gray;
+}
+.choice__tips-right-img-level3 {
+  border: 3px solid @default-green;
+}
+
+// Input elements
+.input__answer-text {
+  font-size: 20px;
+}
+.input__answer-confirm {
+  border: 2px solid @default-red;
+  font-size: 18px;
+  height: 30px;
+  outline: none;
+  padding: 0 3px;
+  vertical-align: top;
+  width: 40px;
+
+  &:focus {
+    border-color: @default-gray;
+  }
+}
+.input__tips-options {
+  border: 2px solid;
+  display: inline-block;
+  margin-right: 5px;
+  min-width: 40px;
+  padding: 5px;
+  text-align: center;
+}
+
+  // Active containers
+.active-container {
+  margin-bottom: 80px;
+  position: relative;
+}
+.active-container__header {
+  border-radius: @default-border-radius;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+  color: #fff;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  width: 210px;
+  z-index: 10;
+}
+.active-container__header:after {
+  content: '';
+}
+.active-container__body {
+  border: 1px solid;
+  border-radius: @default-border-radius;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  width: 225px;
+  z-index: 1;
+}
+
+// Tips
+.hint {
+  margin-top: 20px;
+  padding-left: 35px;
+  position: relative;
+}
+.hint__header {
+  border-radius: @default-border-radius @default-border-radius 0 0;
+  color: #fff;
+  display: inline-block;
+  left: -25px;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  transform: rotate(-90deg);
+  width: 90px;
+}
+.hint__body {
+  background-color: @answer-img-bg;
+  min-height: 110px;
+  padding: 10px;
+}
+.hint__more {
+  cursor: pointer;
+  display: inline-block;;
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+// Modifiers sizes
+.img-size_s {
+  width: @dnd-answer-img-width;
+}
+
+// Modifiers position
+.pos_r {
+  position: relative;
+}
+.block_center {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+// Modifiers padding
+.ptb_s {
+  padding: 10px 0;
+}
+.pt_s {
+  padding-top: 10px;
+}
+
+// Modifiers colors
+.bg_blue {
+  background-color: @default-blue;
+}
+.bg_green {
+  background-color: @default-green;
+}
+.bg_orange {
+  background-color: @default-orange;
+}
+.bg_sea_wave {
+  background-color: @default-sea-wave;
+}
+.br_blue {
+  border-color: @default-blue;
+}
+.br_green {
+  border-color: @default-green;
+}
+.br_orange {
+  border-color: @default-orange;
+}
+.br_red {
+  border-color: @default-red;
+}
+
+// Modifiers borders
+.b_s {
+  border: 1px solid #000;
+}
+
+// Modifiers others
+.cursor_clear {
+  cursor: inherit;
+}

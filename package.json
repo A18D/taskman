@@ -1,0 +1,19 @@
+{
+  "name": "taskman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-route": "^1.6.7",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2"
+  },
+  "scripts": {},
+  "author": "Blednov Evgeniy",
+  "license": "ISC"
+}

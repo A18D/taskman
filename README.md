@@ -3,6 +3,9 @@
 ### Скриншоты
 
 ![Первое задание (без ответов)](screenshot/task1_1.png)
+
 ![Первое задание](screenshot/task1_2.png)
+
 ![Второе задание](screenshot/task2.png)
+
 ![Третье задание](screenshot/task3.png)
